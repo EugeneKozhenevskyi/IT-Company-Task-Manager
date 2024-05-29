@@ -144,16 +144,18 @@ class TagDeleteView(LoginRequiredMixin, generic.DeleteView):
     success_url = reverse_lazy("task:tag-list")
 
 
-@login_required
-def tag_detail(request, pk):
-    tag_tasks = Tag.objects.prefetch_related(
-        "tasks"
-    ).get(id=pk).tasks.all()
+class TagDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Tag
+    template_name = "task/tag_detail.html"
+    context_object_name = "tag"
+    paginate_by = 5
 
-    context = PaginationDetailService(
-        queryset=tag_tasks,
-        page_number=request.GET.get("page"),
-        items_per_page=5
-    ).generate_context()
-
-    return render(request, "task/tag_detail.html", context=context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tag_tasks = self.object.tasks.all()
+        context["task_list"] = PaginationDetailService(
+            queryset=tag_tasks,
+            page_number=self.request.GET.get("page"),
+            items_per_page=self.paginate_by
+        ).generate_context()
+        return context
