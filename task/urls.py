@@ -15,7 +15,7 @@ from task.views import (
     TagDeleteView,
     TagUpdateView,
 
-    tag_detail,
+    TagDetailView,
     task_type_detail
 )
 
@@ -93,7 +93,7 @@ urlpatterns = [
     ),
     path(
         "tags/<int:pk>/detail/",
-        tag_detail,
+        TagDetailView.as_view(),
         name="tag-detail"
     )
 ]
