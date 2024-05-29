@@ -10,7 +10,7 @@ SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
-ALLOWED_HOSTS = ["127.0.0.1", "task-manager-stsc.onrender.com"]
+ALLOWED_HOSTS = ["127.0.0.1",]
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -23,10 +23,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "crispy_bootstrap4",
     "crispy_forms",
-
     "task",
     "employee",
 ]
