@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex flex-wrap align-items-center justify-content-between breadcrumb-content">
-            <h5>Employee Positions</h5>
+            <h5>Worker Positions</h5>
             <div class="d-flex flex-wrap align-items-center">
               <div class="dropdown dropdown-project mr-3">
                   <div class="dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown">
@@ -23,7 +23,7 @@
                     <button class="search-link"><i class="ri-search-line"></i></button>
                 </form>
               </div>
-              <a href="{% url 'employee:position-create' %}" class="btn btn-primary">New Employee Position</a>
+              <a href="{% url 'employee:position-create' %}" class="btn btn-primary">New Worker Position</a>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
       {% endfor %}
     {% else %}
       <div class="col-lg-12 d-flex justify-content-center">
-          <p>We don't have any positions at all or by your sorting etc...</p>
+          <p>We have no any positions at all or by your sorting etc...</p>
       </div>
     {% endif %}
   </div>
