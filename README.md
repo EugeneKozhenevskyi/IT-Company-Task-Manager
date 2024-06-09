@@ -8,6 +8,12 @@
 DB structure:
 ![image](https://github.com/EugeneKozhenevskyi/IT-Company-Task-Manager/assets/159489666/473bb680-c0a8-4661-8295-ddd3a24000e8)
 
+# Check it out:
+[IT Company Task Manager](https://it-company-task-manager-uzrc.onrender.com)
+```
+Login: admin
+Password: DMVC6DisSKgP4dY
+```
 
 
 
